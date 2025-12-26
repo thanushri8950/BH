@@ -4,15 +4,15 @@ conn = sqlite3.connect("library.db")
 cursor = conn.cursor()
 
 cursor.execute("""
-CREATE TABLE IF NOT EXISTS books (
+CREATE TABLE books (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT,
     author TEXT,
     category TEXT,
-    available INTEGER
+    available INTEGER,
+    issue_date TEXT
 )
 """)
-
 
 conn.commit()
 conn.close()
